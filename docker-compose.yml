@@ -1,0 +1,12 @@
+version: '3'
+services:
+  surveybox-ui:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    restart: always # protect when stop then open machine it will auto start
+    ports:
+      - 3001:3000
+    environment:
+      - NODE_ENV=production # using production mode of environment
+      - GENERATE_SOURCEMAP=false
